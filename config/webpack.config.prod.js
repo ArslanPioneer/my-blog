@@ -305,14 +305,6 @@ module.exports = {
                     },
                   },
                 ],
-                [
-                  require.resolve('babel-plugin-import'),// 导入 import 插件
-                  {
-                    libraryName: 'antd',   //暴露antd
-                    style: 'css'
-                  }
-                ]
-              
               ],
               cacheDirectory: true,
               // Save disk space when time isn't as important
@@ -346,6 +338,24 @@ module.exports = {
               // being evaluated would be much more helpful.
               sourceMaps: false,
             },
+          },
+          {
+            test: /\.less$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                },
+              },
+              {
+                loader: require.resolve('less-loader'), // compiles Less to CSS
+                options: {
+                  javascriptEnabled: true
+                }
+              }
+            ],
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
