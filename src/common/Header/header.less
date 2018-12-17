@@ -1,15 +1,50 @@
 .header {
-    margin: 0 auto;
+  margin: 0 auto;
+  height: 56px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100px;
     height: 56px;
     border-bottom: 1px solid #f0f0f0;
-    position: relative;
-    .logo {
-        position:absolute;
-        top:0;
-        left: 0;
-        display: block;
-        width: 100px;
-        height: 56px;
-        border-bottom: 1px solid #f0f0f0;
+  }
+  .nav {
+    width: 960px;
+    height: 100%;
+    padding-right: 70px;
+    box-sizing: border-box;
+    background-color: red;
+    margin: 0 auto;
+    .nav-item {
+      line-height: 56px;
+      padding: 0 15px;
+      font-size: 17px;
+      color: #333;
     }
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+  }
+
+  .inf {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 56px;
+    .login {
+        float: right;
+        margin: 15px;
+    }
+    .register {
+        float: right;
+        margin: 15px;
+    }
+  }
 }
