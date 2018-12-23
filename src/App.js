@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './common/Header';
-import store from './store/store.js';
+import store from './store/index.js';
 import { Provider } from 'react-redux';
 import Home from './pages/Home';
 import Details from './pages/Details';
@@ -17,15 +17,15 @@ class App extends Component {
            <Router>
             <div>
                 <Header />
-                <Route path='/' exact component={Home}></Route>
-                <Route path='/details' exact component={Details}></Route>
-                <Route path="/diary" exact component={Diary}></Route>
-                <Route path="/about" exact component={About}></Route>
+                <Route path='/' exact component={Home}/>
+                <Route path='/details' exact component={Details}/>
+                <Route path="/diary" exact component={Diary}/>
+                <Route path="/about" exact component={About}/>
             </div>  
            </Router>
            <Router>
              <div>
-                <Route path='/Login' exact component={Login}></Route>
+                <Route path='/Login' exact component={Login}/>
              </div>   
            </Router>
       </Provider>
