@@ -12,10 +12,10 @@ export default class Home extends Component {
                     <div className='HomeLeft'>
                         <List />
                     </div>
-                    <div className='HomeRight'>
+                 </div>
+                 <div className='HomeRight'>
                         <Writer />
                         <Recommend />
-                    </div>
                  </div>
              </Fragment>
         )
