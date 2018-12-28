@@ -1,33 +1,41 @@
 import React, { Component,Fragment } from 'react';
+import {connect} from 'react-redux';
+import { actionCreators } from './store';
 import './style.less';
-export default class Detail extends Component {
+class Detail extends Component {
+
+    componentDidMount(){
+        this.props.getDetail();
+    }
+    
     render(){
+       
         return (
             <Fragment>
                  <div className='detail'>
-                    <div className='title'>人生太短，怎么能停止奋斗！！！</div>
-                    <div className='content'>
-                        <img src='https://pub-static.haozhaopian.net/static/web/site/features/cn/crop/images/crop_20a7dc7fbd29d679b456fa0f77bd9525d.jpg' />
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
-                        <p>哈哈哈</p>
+                    <div className='title'>{this.props.title}</div>
+                
+                    <div className='content' dangerouslySetInnerHTML={{__html:this.props.content}}>
+                      
                     </div>
                  </div>
             </Fragment>
         )
     }
 }
+
+const mapState=(state)=>(
+    {
+        title:state.detail.title,
+        content:state.detail.content
+    }
+)
+
+const mapDispatch=(dispatch)=> (
+    {
+        getDetail(){
+            dispatch(actionCreators.getDetail());
+        }
+    }
+)
+export default connect(mapState,mapDispatch)(Detail);
