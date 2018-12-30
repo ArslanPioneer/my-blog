@@ -1,0 +1,1 @@
+export const GET_TITLE_DATA='detail/getDetail'

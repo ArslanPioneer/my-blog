@@ -5,7 +5,8 @@ import './style.less';
 class Detail extends Component {
 
     componentDidMount(){
-        this.props.getDetail();
+    
+        this.props.Detail();
     }
     
     render(){
@@ -33,8 +34,10 @@ const mapState=(state)=>(
 
 const mapDispatch=(dispatch)=> (
     {
-        getDetail(){
-            dispatch(actionCreators.getDetail());
+        Detail(){
+        
+         const action =actionCreators.getDetail();
+         dispatch(action);
         }
     }
 )
