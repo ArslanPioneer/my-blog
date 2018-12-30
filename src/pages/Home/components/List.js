@@ -1,8 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { actionCreators } from '../store';
 import '../style.less';
 class List extends Component {
+  componentDidMount(){
+    this.props.queryArticlList();
+  }
   render() {
     const { list } = this.props;
     //debugger;
@@ -28,11 +32,16 @@ class List extends Component {
   }
 }
 
-const mapStateToprops = state => ({
+const mapStateToprops = (state) => ({
   list: state.home.articleList
 });
 
-const mapDispatchToprops = dispatch => ({});
+const mapDispatchToprops = (dispatch) => ({
+    queryArticlList() {
+      const action=actionCreators.queryArticlesList();
+      dispatch(action);
+    }
+});
 export default connect(
   mapStateToprops,
   mapDispatchToprops
