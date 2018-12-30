@@ -17,12 +17,12 @@ class Header extends Component {
                 首页
               </div>
             </Link>
-            <Link to="/details">
+            {/* <Link to="/details"> */}
               <div className="nav-item left">
                 <Icon type="book" theme="filled" />
                 热门文章
               </div>
-            </Link>
+            {/* </Link> */}
             <Link to="/diary">
               <div className="nav-item left">
                 <Icon type="heart" theme="filled" />

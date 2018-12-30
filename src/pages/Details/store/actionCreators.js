@@ -6,11 +6,11 @@ const changeDetail = (title, content) => ({
   content
 });
 
-export const getDetail = () => {
+export const getDetail = (id) => {
   return dispatch => {
     axios
       .get(
-        'https://easy-mock.com/mock/5c2624b4bc1add21289512be/blog/blog/titleDetail'
+        `https://easy-mock.com/mock/5c2624b4bc1add21289512be/blog/blog/titleDetail?id=${id}`
       )
       .then(response => {
         const data = response.data.data;

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../style.less';
 class List extends Component {
   render() {
@@ -10,6 +11,7 @@ class List extends Component {
         <div>
           {list.map(item => {
             return (
+              <Link to={'/details/'+item.id}>
               <div className="ListItem">
                 <img src={item.imgUrl} className="pic" />
                 <div className="listInfo">
@@ -17,6 +19,7 @@ class List extends Component {
                   <p className="desc">{item.desc}</p>
                 </div>
               </div>
+              </Link>
             );
           })}
         </div>

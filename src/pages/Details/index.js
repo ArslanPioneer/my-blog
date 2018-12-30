@@ -5,8 +5,8 @@ import './style.less';
 class Detail extends Component {
 
     componentDidMount(){
-    
-        this.props.Detail();
+        //console.log(this.props.match.params.id);
+        this.props.Detail(this.props.match.params.id);
     }
     
     render(){
@@ -34,9 +34,9 @@ const mapState=(state)=>(
 
 const mapDispatch=(dispatch)=> (
     {
-        Detail(){
+        Detail(id){
         
-         const action =actionCreators.getDetail();
+         const action =actionCreators.getDetail(id);
          dispatch(action);
         }
     }
