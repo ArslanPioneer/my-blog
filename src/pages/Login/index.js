@@ -8,8 +8,8 @@ class Login extends Component {
       <Fragment>
         <div className="loginWrapper">
           <div className="loginBox">
-            <Form>
-              <Form.Item label='用户'>
+            <Form layout="inline">
+              <Form.Item label="用户">
                 {getFieldDecorator('userName', {
                   rules: [
                     { required: true, message: 'Please input your username!' }
@@ -20,10 +20,11 @@ class Login extends Component {
                       <Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />
                     }
                     placeholder="用户名"
+                    style={{width:200}}
                   />
                 )}
               </Form.Item>
-              <Form.Item label='密码'>
+              <Form.Item label="密码">
                 {getFieldDecorator('passWord', {
                   rules: [
                     { required: true, message: 'Please input your passWord!' }
@@ -33,11 +34,18 @@ class Login extends Component {
                     prefix={
                       <Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />
                     }
+                    style={{width:200}}
                     placeholder="密码"
                     type="passWord"
                   />
                 )}
-                <a className='login-form-forgot' href=''></a>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="login-form-button"
+                >
+                  登陆
+                </Button>
               </Form.Item>
             </Form>
           </div>
